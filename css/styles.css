@@ -1,11 +1,14 @@
 .logo h1 {
     font-family: 'Grand Hotel', cursive;
-    font-size: 26px; /* Tamaño más realista */
-    font-weight: 0.5px; /* No bold, Instagram lo usa delgado */
+    font-size: 30px; /* Tamaño más realista */
+    font-weight: normal; /* No bold, Instagram lo usa delgado */
     line-height: normal; /* Evita cortes */
     color: #000000; /* Negro puro, igual que Instagram */
     display: inline-block; /* Mantiene el tamaño correcto */
     white-space: nowrap; /* Evita que se divida */
+    padding-bottom: 22%;
+    padding-top: 15%;
+    padding-left: 10%;
 }
 
 /* Reset básico */
@@ -92,4 +95,151 @@
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
+}
+
+/* Estilos para la seccion del perfil*/
+/* Sección del perfil combinada */
+.section-1 {
+    /* Estilo basado en Instagram */
+    display: grid;
+    grid-template-columns: 120px 532.8px;
+    width: 660px;
+    margin: 16px auto; /* Centrado horizontalmente con margen superior de 16px */
+    padding: 40px 20px;
+    gap: 105px;  /* Espacio entre la imagen de perfil y la información */
+    border-bottom: 1px solid #dbdbdb;
+    
+    /* Estilos extraídos */
+    color: rgb(0, 0, 0);
+    color-scheme: light;
+    direction: ltr;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    text-size-adjust: 100%;
+    unicode-bidi: isolate;
+
+    /* Desplazar todo el contenedor un poco a la derecha */
+    transform: translateX(20px);
+}
+
+/* Imagen de perfil */
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+/* Información del perfil */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Encabezado del perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espacio entre botones */
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 25px;
+}
+
+/* Botones de perfil */
+.profile-header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: none;
+    background: rgb(239, 239, 239);
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    transition: background 0.2s ease;
+    height: 32px;
+}
+
+.profile-header button:hover {
+    background: #e0e0e0;
+}
+
+/* Icono de configuración */
+.profile-header a i {
+    font-size: 20px;
+    color: #262626;
+    cursor: pointer;
+}
+
+/* Estadísticas del perfil */
+/* Ajustar los estilos de las estadísticas del perfil */
+.profile-stats {
+    display: flex; /* Asegura que los elementos estén alineados horizontalmente */
+    gap: 30px; /* Espaciado uniforme entre las estadísticas */
+    margin-bottom: 20px;
+    font-size: 16px; /* Tamaño uniforme */
+    line-height: 20px; /* Altura uniforme */
+}
+
+/* Elementos individuales (números y etiquetas) */
+.profile-stats h2,
+.profile-stats a {
+    display: flex; /* Cambiar a flex para alinear correctamente */
+    flex-direction: column; /* Asegura que el número y la etiqueta estén en columnas */
+    align-items: center; /* Centrar horizontalmente */
+    text-decoration: none;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Números en negrita */
+.profile-stats .stat-number {
+    font-weight: 600;
+    font-size: 16px; /* Tamaño uniforme */
+}
+
+/* Etiquetas en peso normal */
+.profile-stats .stat-label {
+    font-weight: 400; /* Peso uniforme */
+    font-size: 14px; /* Tamaño uniforme */
+    margin-top: 4px; /* Espaciado entre número y etiqueta */
+}
+
+.profile-stats a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para los enlaces en el perfil */
+.profile-info a {
+    color: #262626;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.profile-info a:hover {
+    text-decoration: underline;
+}
+
+/* Evitar que los enlaces visitados cambien de color */
+.profile-info a:visited {
+    color: #262626;
+}
+
+/* Clase auxiliar para centrar */
+.align-center {
+    display: flex;
+    align-items: center;
 }
