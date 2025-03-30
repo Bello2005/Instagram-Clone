@@ -98,29 +98,29 @@
 }
 
 /* Estilos para la seccion del perfil*/
-/* Sección del perfil combinada */
-.section-1 {
-    /* Estilo basado en Instagram */
-    display: grid;
-    grid-template-columns: 120px 532.8px;
+/* Nuevo contenedor principal */
+.profile-container {
     width: 660px;
-    margin: 16px auto; /* Centrado horizontalmente con margen superior de 16px */
-    padding: 40px 20px;
-    gap: 105px;  /* Espacio entre la imagen de perfil y la información */
-    border-bottom: 1px solid #dbdbdb;
-    
-    /* Estilos extraídos */
-    color: rgb(0, 0, 0);
-    color-scheme: light;
-    direction: ltr;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 18px;
-    text-size-adjust: 100%;
-    unicode-bidi: isolate;
+    margin: 16px auto;
+    margin-bottom: 6.2%;
+    transform: translateX(5%) translateY(0.2%); /* Ajusta el valor de 10px según sea necesario */
+}
 
-    /* Desplazar todo el contenedor un poco a la derecha */
-    transform: translateX(20px);
+/* Mantener el diseño de la sección del perfil */
+.section-1 {
+    display: grid;
+    grid-template-columns: 150px auto; /* Mantiene la estructura */
+    padding: 24px 20px; /* Reduje el padding superior */
+    gap: 13%; /* Reduje el espacio entre la imagen y la información */
+    position: relative; /* Mantiene la referencia para elementos absolutos */
+}
+
+/* Contenedor de la imagen y las historias */
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineado a la izquierda */
+    position: relative; /* Permite un posicionamiento más preciso */
 }
 
 /* Imagen de perfil */
@@ -130,6 +130,78 @@
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+/* Contenedor de historias destacadas */
+.section-1-3 {
+    position: absolute;
+    top: 170px; /* Posiciona debajo de la imagen */
+    right: 58%; /* Lo mueve más a la izquierda */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+/* Estilos del círculo de historias */
+.section-1-3 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    border: 1px solid #d9d9d9;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Ícono dentro del círculo */
+.section-1-3 a i {
+    font-size: 34px;
+}
+
+/* Texto debajo del círculo */
+.section-1-3 h4 {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #262626;
+    text-align: center;
+}
+
+/* Asegurar que los botones estén siempre en línea */
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaciado uniforme entre botones */
+    flex-wrap: nowrap; /* Evita que se apilen en columnas */
+}
+
+/* Botones en línea */
+.profile-actions button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #efefef;
+    cursor: pointer;
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+}
+
+/* Icono de configuración */
+.profile-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* Ajustar tamaño */
+    height: 32px;
+}
+
+.profile-actions a i {
+    font-size: 18px;
+    color: #262626;
 }
 
 /* Información del perfil */
@@ -153,6 +225,7 @@
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 25px;
+    margin-right: 9px;
 }
 
 /* Botones de perfil */
@@ -258,3 +331,107 @@
     user-select: none;
     white-space-collapse: collapse;
 }
+
+
+/* --- Separador --- */
+.profile-divider {
+    width: 90%;
+    max-width: 931px;
+    height: 1px;
+    background-color: #dbdbdb;
+    margin: 5% auto 0 auto; /* Asegura que esté debajo de los tabs sin tocar los bordes */
+    transform: translateX(13%);
+}
+
+/* --- Contenedor de pestañas --- */
+.tab_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 90%;
+    max-width: 931px;
+    margin: 0 auto;
+    position: relative;
+    transform: translateX(13%);
+}
+
+/* --- Botones de pestañas --- */
+.tab_btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8e8e8e;
+    background: none;
+    border: none;
+    padding: 12px 0;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.tab_btn i {
+    font-size: 16px;
+}
+
+/* --- Estado activo de la pestaña --- */
+.tab_btn.active {
+    color: black;
+    position: relative;
+}
+
+.tab_btn.active::after {
+    content: "";
+    position: absolute;
+    top: 0; /* La línea se muestra encima del botón activo */
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background-color: black;
+}
+
+/* --- Contenedor de publicaciones (contenido de pestañas) --- */
+.content_box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cada publicación tendrá al menos 200px */
+    gap: 16px; /* Espacio entre publicaciones */
+    padding: 16px;
+    justify-items: center;
+  }
+  
+/* --- Contenedor de publicaciones (contenido de pestañas) --- */
+.content_box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cada imagen tendrá al menos 200px */
+    gap: 16px; /* Espacio entre publicaciones */
+    padding: 16px;
+    justify-items: center;
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  }
+  
+  /* Cada imagen de publicación */
+  .content_box a img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .content_box a img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* --- Mostrar solo la pestaña activa --- */
+  .content {
+    display: none;
+    width: 100%; /* Asegura que el contenido no exceda el ancho del contenedor */
+    overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  }
+  
+  .content.active {
+    display: block;
+  }
+  
