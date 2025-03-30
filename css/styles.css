@@ -143,7 +143,7 @@
 .profile-header {
     display: flex;
     align-items: center;
-    gap: 10px; /* espacio entre botones */
+    gap: 10px; /* Espacio entre botones */
     margin-bottom: 20px;
 }
 
@@ -161,19 +161,20 @@
     align-items: center;
     justify-content: center;
     padding: 10px 16px;
-    border: none;
+    border: 1px solid transparent; /* Agregado para consistencia */
     background: rgb(239, 239, 239);
     cursor: pointer;
     border-radius: 8px;
     font-size: 14px;
     font-weight: bold;
     color: #000;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease, border-color 0.2s ease;
     height: 32px;
 }
 
 .profile-header button:hover {
     background: #e0e0e0;
+    border-color: #ccc; /* Agregado para un mejor feedback visual */
 }
 
 /* Icono de configuración */
@@ -184,42 +185,41 @@
 }
 
 /* Estadísticas del perfil */
-/* Ajustar los estilos de las estadísticas del perfil */
 .profile-stats {
-    display: flex; /* Asegura que los elementos estén alineados horizontalmente */
-    gap: 30px; /* Espaciado uniforme entre las estadísticas */
+    display: flex;
+    gap: 30px;
     margin-bottom: 20px;
-    font-size: 16px; /* Tamaño uniforme */
-    line-height: 20px; /* Altura uniforme */
+    font-size: 16px;
+    line-height: 20px;
 }
 
 /* Elementos individuales (números y etiquetas) */
 .profile-stats h2,
 .profile-stats a {
-    display: flex; /* Cambiar a flex para alinear correctamente */
-    flex-direction: column; /* Asegura que el número y la etiqueta estén en columnas */
-    align-items: center; /* Centrar horizontalmente */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     text-decoration: none;
     margin: 0;
-    text-align: center;
+    text-align: left;
     cursor: pointer;
+    gap: 8px;
 }
 
 /* Números en negrita */
 .profile-stats .stat-number {
     font-weight: 600;
-    font-size: 16px; /* Tamaño uniforme */
+    font-size: 16px;
+    color: #000;
 }
 
-/* Etiquetas en peso normal */
+/* Etiquetas en peso normal con el degradado */
 .profile-stats .stat-label {
-    font-weight: 400; /* Peso uniforme */
-    font-size: 14px; /* Tamaño uniforme */
-    margin-top: 4px; /* Espaciado entre número y etiqueta */
-}
-
-.profile-stats a:hover {
-    text-decoration: underline;
+    font-weight: 400;
+    font-size: 16px;
+    background: rgb(115, 115, 115);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* Estilos para los enlaces en el perfil */
@@ -242,4 +242,19 @@
 .align-center {
     display: flex;
     align-items: center;
+}
+
+/*Threads*/
+
+.profile-threads {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    line-height: 16px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    text-align: start;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space-collapse: collapse;
 }
