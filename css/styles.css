@@ -1,3 +1,55 @@
+/* 
+
+Documentation:
+
+1. General Reset:
+    - Resets margin, padding, and box-sizing for all elements.
+    - Sets a default font-family for the entire document.
+
+2. Sidebar Styles:
+    - Defines the layout and appearance of the sidebar.
+    - Includes styles for navigation links, hover effects, and icons.
+
+3. Logo Styles:
+    - Customizes the appearance of the Instagram logo.
+    - Ensures proper alignment, font, and color.
+
+4. Profile Section:
+    - Styles for the profile , including layout and alignment.
+    - Includes styles for profile picture, actions, and information.
+
+5. Responsive Design:
+    - Media query for screens with a max-width of 768px.
+    - Adjusts layout for smaller screens, including sidebar and main content.
+
+6. Highlighted Stories:
+    - Styles for the section containing highlighted stories.
+    - Includes circular story s and accompanying text.
+
+7. Profile Actions:
+    - Ensures buttons and icons in the profile section are aligned and styled.
+    - Adds hover effects for better user interaction.
+
+8. Profile Stats:
+    - Styles for displaying profile statistics (e.g., posts, followers).
+    - Differentiates numbers and labels with distinct styles.
+
+9. Tabs and Content:
+    - Styles for tab navigation and associated content.
+    - Ensures only the active tab content is displayed.
+
+10. Posts Section:
+     - Defines layout and styles for displaying user posts.
+     - Includes responsive adjustments and image styling.
+
+11. Footer:
+     - Styles for the footer section, including links and text alignment.
+     - Ensures a clean and minimalistic appearance.
+
+12. Miscellaneous:
+     - Additional utility classes for alignment and spacing.
+     - Styles for special containers and text overlays.
+*/
 .logo h1 {
     font-family: 'Grand Hotel', cursive;
     font-size: 30px; /* Tamaño más realista */
@@ -240,6 +292,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 23%;
 }
 
 /* Encabezado del perfil */
@@ -310,21 +363,22 @@
     gap: 8px;
 }
 
-/* Números en negrita */
+/* Números en negrita y color negro */
 .profile-stats .stat-number {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     color: #000;
 }
 
-/* Etiquetas en peso normal con el degradado */
+/* Etiquetas con degradado en #dbdbdb */
 .profile-stats .stat-label {
     font-weight: 400;
     font-size: 16px;
-    background: rgb(115, 115, 115);
+    background:  #a1a1a1;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 
 /* Estilos para los enlaces en el perfil */
 .profile-info a {
@@ -373,6 +427,7 @@
     margin: 5% auto 0 auto; /* Asegura que esté debajo de los tabs sin tocar los bordes */
     transform: translateX(13%);
 }
+
 #publicaciones {
     display: flex;
     justify-content: center; /* Centra horizontalmente */
@@ -411,45 +466,74 @@
 }
 
 
-/* TAB CONTAINER */
+/* Contenedor de los tabs */
+/* Contenedor de los tabs */
 .tab_box {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+    gap: 40px; /* Espaciado entre botones */
+    position: relative;
     margin-top: 20px;
-    margin-left: 240px;
-    margin-right: 10px;
+    padding-top: 12px; /* Espacio para la línea gris */    
+    margin-left: 15%; /* Ajusta según necesites que se superponga sobre la gris */
 }
 
-.tab_box, button{
-    margin-top: 10px;
-    color: rgb(163, 162, 162);
-    gap: 30px;
+/* Línea gris fija arriba de los botones centrada en el contenedor */
+.tab_box::before {
+    content: "";
+    position: absolute;
+    top: 0; /* Línea en la parte superior */
+    left: 50%; /* Posiciona el centro de la línea en el centro del contenedor */
+    transform: translateX(-50%); /* Mueve la línea para que quede centrada */
+    width: 90%; 
+    max-width: 900px;
+    height: 1px;
+    background-color: #a1a1a1;
+    z-index: 0; /* Menor z-index */
 }
 
-/* BOTONES DE LOS TABS */
+/* Botones de los tabs */
 .tab_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: none;
     border: none;
     font-size: 12px;
-    padding: 5px 10px;
+    padding: 10px 15px;
     cursor: pointer;
     transition: 0.3s;
+    color: rgb(0, 0, 0);
+    position: relative;
+    
 }
-.tab_box  .tab_btn i{
-    margin-right:7px;
+
+/* Iconos en los botones */
+.tab_box .tab_btn i {
+    margin-right: 15px; /* Si sientes que esto afecta la centrado, ajústalo o elimínalo */
 }
-.tab_box button:hover{
+
+/* Efecto hover en botones */
+.tab_btn:hover {
     color: #000;
 }
 
-.tab_btn.active {
-    border-bottom: 1.5px solid rgb(163, 162, 162);
+/* Línea de selección negra sobre la gris en el botón activo */
+.tab_btn.active::before {
+    content: "";
+    position: absolute;
+    top: -9.95px; /* Ajusta según necesites que se superponga sobre la gris */
+    left: 0;
+    width: 100%;
+    height: 0.5px;
+    background-color: #000;
+    translate: x(-50%);
+    z-index: 1; /* Mayor z-index para que aparezca encima */
 }
 
-.tab_btn.active:hover{
-    border-bottom: 1.5px solid #000;
-}
+
+
 /* CONTENIDO DE LOS TABS */
 .content_box {
     text-align: center;

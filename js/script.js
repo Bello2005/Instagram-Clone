@@ -1,21 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const tabs = document.querySelectorAll(".tab_btn");
-    const contents = document.querySelectorAll(".content");
-  
-    tabs.forEach(tab => {
+  let tabs = document.querySelectorAll(".tab_btn");
+  let contents = document.querySelectorAll(".content");
+
+  tabs.forEach(tab => {
       tab.addEventListener("click", function () {
-        // Quitar la clase 'active' de todos los botones
-        tabs.forEach(btn => btn.classList.remove("active"));
-        // Agregar 'active' al botón clicado
-        this.classList.add("active");
-  
-        // Ocultar todo el contenido
-        contents.forEach(content => content.classList.remove("active"));
-  
-        // Mostrar el contenido correspondiente
-        const target = this.getAttribute("data-target");
-        document.getElementById(target).classList.add("active");
+          let target = this.getAttribute("data-target");
+
+          // Remover la clase 'active' de todos los tabs y contenidos
+          tabs.forEach(t => t.classList.remove("active"));
+          contents.forEach(c => c.style.display = "none"); // Ocultar todos
+
+          // Activar solo la sección correspondiente
+          this.classList.add("active");
+          document.getElementById(target).style.display = "block";
       });
-    });
   });
-  
+});

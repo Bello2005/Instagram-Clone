@@ -75,9 +75,9 @@
                     </div>
                 </div>
                 <div class="profile-stats">
-                    <h2>6 publicaciones</h2>
-                    <a href="#">12 seguidores</span></a>
-                    <a href="#">34 seguidos</span></a>
+                    <h2><span class="stat-number">6</span> <span class="stat-label">Publicaciones</span></h2>
+                    <a href="#"> <span class="stat-number">12</span> <span class="stat-label">Seguidores</span></a>
+                    <a href="#"> <span class="stat-number">34</span> <span class="stat-label">Seguidos</span></a>
                 </div>
                 <h3 class="profile-name">Tatiana Serna</h3>
             </section>
@@ -90,11 +90,6 @@
 
     </section><br>
 
-    <!-- Mover la línea separadora aquí -->
-    <div class="profile-divider"></div>
-
-    <!--TABS-->
-    <!-- TABS -->
     <!-- TABS -->
     <div class="container">
         <div class="tab_box">
@@ -119,11 +114,11 @@
         <div class="content active" id="publicaciones">
             <a href="#"><img class="imagen1" src="assets/images/1.jpg" alt="imagen 1"></a>
             <a href="#"><img class="imagen2" src="assets/images/2.jpg" alt="imagen 2"></a>
-            <a href="#"><img class="imagen3" src="assets/images/3.jpg" alt="imagen 3"></a><br>
+            <a href="#"><img class="imagen3" src="assets/images/8.jpg" alt="imagen 3"></a><br>
         </div>
         <div class="content" id="publicaciones2">
             <a href="#"><img class="imagen4" src="assets/images/4.jpg" alt="imagen 1"></a>
-            <a href="#"><img class="imagen5" src="assets/images/5.jpg" alt="imagen 2"></a>
+            <a href="#"><img class="imagen5" src="assets/images/9.jpg" alt="imagen 2"></a>
             <a href="#"><img class="imagen6" src="assets/images/6.jpg" alt="imagen 3"></a>
         </div>
 
@@ -203,27 +198,7 @@
 
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let tabs = document.querySelectorAll(".tab_btn");
-            let contents = document.querySelectorAll(".content");
-
-            tabs.forEach(tab => {
-                tab.addEventListener("click", function () {
-                    let target = this.getAttribute("data-target");
-
-                    // Remover la clase 'active' de todos los tabs y contenidos
-                    tabs.forEach(t => t.classList.remove("active"));
-                    contents.forEach(c => c.style.display = "none"); // Ocultar todos
-
-                    // Activar solo la sección correspondiente
-                    this.classList.add("active");
-                    document.getElementById(target).style.display = "block";
-                });
-            });
-        });
-
-    </script>
+    <script src="js/script.js"></script>
 
 
 </body>
