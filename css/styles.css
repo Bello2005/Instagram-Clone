@@ -548,6 +548,34 @@ Documentation:
 .content.active {
     display: block;
 }
+
+/*Nuevo*/
+/* Este CSS solo afecta al contenedor de las publicaciones */
+.publications-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    max-width: 935px;  /* Mantener ancho tipo Instagram */
+    margin: 0 auto;    /* Centrar la grid */
+    padding: 0;        /* Quitar rellenos innecesarios */
+  }
+  
+
+.publications-grid a {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.publications-grid img {
+    width: 100%;
+    aspect-ratio: 1/1;  /* Mantiene las imágenes cuadradas */
+    object-fit: cover;  /* Recorta la imagen para llenar la celda sin distorsión */
+    display: block; /* Quita espacios extra que a veces generan elementos inline */
+}
+
+
+/*Fin del nuevo*/
 #guardadas a{
     text-decoration: none;
 }
