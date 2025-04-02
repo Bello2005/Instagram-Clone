@@ -1,18 +1,36 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let tabs = document.querySelectorAll(".tab_btn");
-  let contents = document.querySelectorAll(".content");
+document.addEventListener('DOMContentLoaded', function() {
+  // Seleccionar elementos
+  const sectionsMenu = document.querySelectorAll('.section-menu-item');
+  const contentSections = {
+      publicaciones: document.querySelector('.grid-content'),
+      guardados: document.querySelector('.saved-content'),
+      etiquetadas: document.querySelector('.tagged-content')
+  };
 
-  tabs.forEach(tab => {
-      tab.addEventListener("click", function () {
-          let target = this.getAttribute("data-target");
+  // Función para cambiar de sección
+  function switchSection(selectedSection) {
+      // Remover clases activas
+      sectionsMenu.forEach(menuItem => {
+          menuItem.classList.remove('active');
+      });
+      
+      Object.values(contentSections).forEach(section => {
+          section.classList.remove('active-section');
+      });
 
-          // Remover la clase 'active' de todos los tabs y contenidos
-          tabs.forEach(t => t.classList.remove("active"));
-          contents.forEach(c => c.style.display = "none"); // Ocultar todos
+      // Añadir clases activas
+      selectedSection.classList.add('active');
+      const target = selectedSection.getAttribute('data-target');
+      contentSections[target].classList.add('active-section');
+  }
 
-          // Activar solo la sección correspondiente
-          this.classList.add("active");
-          document.getElementById(target).style.display = "block";
+  // Configurar evento click para cada ítem del menú
+  sectionsMenu.forEach(menuItem => {
+      menuItem.addEventListener('click', function() {
+          switchSection(this);
       });
   });
+
+  // Activar sección inicial (Publicaciones)
+  switchSection(sectionsMenu[0]);
 });
