@@ -543,3 +543,112 @@ footer, .footer-tittle{
     margin-left: 220px;
     color: rgb(173, 173, 173);
 }
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    .profile-container {
+        width: 100%;
+        margin: 10px auto;
+        padding: 0 10px;
+        transform: none;
+    }
+    .tittle1{
+       margin-left:130px;
+       margin-top: -210PX;
+    }
+    .profile-actions{
+        position: relative;
+        right:153px;
+        margin-top: -125px;
+    }
+    .tuerca{
+        position: relative;
+        margin-top: -80px;
+        right:100px;
+    }
+    #img{
+        top: 57px;
+        left: 11px;
+        
+    }
+    .section-1-3{
+        position: relative;
+        left: 16px;
+        margin-top: -75px;
+        width: 80px;
+        top:182px;
+    }
+
+    #img1{
+        font-size:20px;
+    }
+    #name{
+        margin-top: -145px;
+        position: relative;
+        right: 290px;
+        font-size: 10px;
+        top:121px;
+    }
+
+       
+    .section-1 {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+        text-align: center;
+        gap: 10px;
+        margin-top: -20px;
+    }
+
+    .profile-picture img{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin-top: 0px;
+    }
+    .profile-info tittle1{
+        margin-left: 100px;
+    }
+    .profile-stats {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-left: auto;
+        top: 110px;/* Mueve el contenido hacia la derecha */
+    }
+    .profile-divider{
+        left: 60px;
+        position: relative;
+        max-width: 530px;
+    }
+    .content_box{
+        position: relative;
+        left: 35px;
+    }
+    .tab_box .tab_btn{
+      left: 20px;
+      font-size:11px;
+      position: relative;
+    }
+    #publicaciones img,
+    #publicaciones2 img {
+        max-width: 160px;
+    }
+    footer {
+        text-align: left;
+        padding: 5px 0;
+        margin-left: 20px; 
+    }
+    .enlaces-footer{
+        right: 90px;
+        position: relative;
+    }
+  
+}
