@@ -132,6 +132,418 @@
     border: 1px solid rgba(0, 0, 0, 0.4);
 }
 @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar ul li {
+        flex: 1;
+        border-bottom: none;
+        border-right: 1px solid #34495e;
+    }
+
+    .sidebar ul li:last-child {
+        border-right: none;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+}
+/* Contenedor de historias destacadas */
+.section-1-3 {
+    position: absolute;
+    top: 170px; /* Posiciona debajo de la imagen */
+    right: 58%; /* Lo mueve más a la izquierda */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+/* Estilos del círculo de historias */
+.section-1-3 a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    border: 1px solid #d9d9d9;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Ícono dentro del círculo */
+.section-1-3 a i {
+    font-size: 34px;
+}
+
+/* Texto debajo del círculo */
+.section-1-3 h4 {
+    margin-top: 6px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #262626;
+    text-align: center;
+}
+
+/* Asegurar que los botones estén siempre en línea */
+.profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaciado uniforme entre botones */
+    flex-wrap: nowrap; /* Evita que se apilen en columnas */
+}
+
+/* Botones en línea */
+.profile-actions button {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: #efefef;
+    cursor: pointer;
+    white-space: nowrap; /* Evita que el texto se divida en dos líneas */
+}
+
+/* Icono de configuración */
+.profile-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; /* Ajustar tamaño */
+    height: 32px;
+}
+
+.profile-actions a i {
+    font-size: 18px;
+    color: #262626;
+}
+
+/* Información del perfil */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Encabezado del perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre botones */
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 25px;
+    margin-right: 9px;
+}
+
+/* Botones de perfil */
+.profile-header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border: 1px solid transparent; /* Agregado para consistencia */
+    background: rgb(239, 239, 239);
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    height: 32px;
+}
+
+.profile-header button:hover {
+    background: #e0e0e0;
+    border-color: #ccc; /* Agregado para un mejor feedback visual */
+}
+
+/* Icono de configuración */
+.profile-header a i {
+    font-size: 20px;
+    color: #262626;
+    cursor: pointer;
+}
+
+/* Estadísticas del perfil */
+.profile-stats {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+/* Elementos individuales (números y etiquetas) */
+.profile-stats h2,
+.profile-stats a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+    gap: 8px;
+}
+
+/* Números en negrita */
+.profile-stats .stat-number {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000;
+}
+
+/* Etiquetas en peso normal con el degradado */
+.profile-stats .stat-label {
+    font-weight: 400;
+    font-size: 16px;
+    background: rgb(115, 115, 115);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Estilos para los enlaces en el perfil */
+.profile-info a {
+    color: #262626;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.profile-info a:hover {
+    text-decoration: underline;
+}
+
+/* Evitar que los enlaces visitados cambien de color */
+.profile-info a:visited {
+    color: #262626;
+}
+
+/* Clase auxiliar para centrar */
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+/*Threads*/
+
+.profile-threads {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    line-height: 16px;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    text-align: start;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space-collapse: collapse;
+}
+
+
+/* --- Separador --- */
+.profile-divider {
+    width: 90%;
+    max-width: 931px;
+    height: 1px;
+    background-color: #dbdbdb;
+    margin: 5% auto 0 auto; /* Asegura que esté debajo de los tabs sin tocar los bordes */
+    transform: translateX(13%);
+}
+#publicaciones {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 5px; /* Espacio entre imágenes */
+    margin-top: 20px; /* Espacio desde arriba */
+}
+#publicaciones2{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    gap: 5px; /* Espacio entre imágenes */
+    margin-top: -20px; /* Espacio desde arriba */
+    margin-left: 195px;
+}
+
+.content.active{
+    margin-left: 200px;
+
+}
+
+
+#publicaciones img {
+    width: 210px;
+    height: 230px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 5px; /* Bordes redondeados (opcional) */
+}
+
+#publicaciones2 img {
+    width: 210px;
+    height: 230px;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 5px; /* Bordes redondeados (opcional) */
+    margin-top: 20px;
+}
+
+
+/* TAB CONTAINER */
+.tab_box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: 240px;
+    margin-right: 10px;
+}
+
+.tab_box, button{
+    margin-top: 10px;
+    color: rgb(163, 162, 162);
+    gap: 30px;
+}
+
+/* BOTONES DE LOS TABS */
+.tab_btn {
+    background: none;
+    border: none;
+    font-size: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.tab_box  .tab_btn i{
+    margin-right:7px;
+}
+.tab_box button:hover{
+    color: #000;
+}
+
+.tab_btn.active {
+    border-bottom: 1.5px solid rgb(163, 162, 162);
+}
+
+.tab_btn.active:hover{
+    border-bottom: 1.5px solid #000;
+}
+/* CONTENIDO DE LOS TABS */
+.content_box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* SOLO SE MUESTRA EL TAB ACTIVO */
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+#guardadas a{
+    text-decoration: none;
+}
+.tittle-1{
+    color: rgb(148,148,148);
+    margin-right: 490px;
+    font-size: 11px;
+}
+.tittle-2{
+    color: rgb(49, 138, 240);
+    font-size: 11px;
+    margin-left: 1080px;
+}
+.tittle-2 i{
+    margin-right: 7px;
+    font-size: 10px;
+}
+.contenedor-especial {
+    position: relative;
+    display: inline-block;
+}
+
+.imagen-g1 {
+    width: 400px; /* Ajusta según sea necesario */
+    height: auto;
+    display: block;
+    margin-top: 20px;
+    margin-right: 300px;
+}
+.tittle-3 {
+    position: absolute;
+    bottom: 10px; /* Espacio desde la parte inferior */
+    left: 190px;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.2); /* Fondo semitransparente */
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+}
+#etiquetadas{
+    margin-left: 250px;
+}
+.tittle--1{
+    text-decoration: none;
+}
+.tittle--2{
+ font-size: 11px;
+}
+#icon{
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+footer{
+    text-align: center;
+    padding: 10px 0;
+}
+footer, .footer-tittle{
+    text-decoration: none;
+    color:rgb(173, 173, 173);
+    font-size:10.5px;
+    margin-left: 15px;
+}
+.enlaces-footer{
+    margin-left: 215px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.enlaces-footer2{
+    margin-left: 220px;
+}
+.enlaces-footer3 .footer-tittle1{
+    margin-left: 220px;
+    color: rgb(173, 173, 173);
+}
+@media (max-width: 768px) {
     .sidebar {
         position: relative;
         width: 100%;
