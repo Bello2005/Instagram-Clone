@@ -543,56 +543,66 @@ footer, .footer-tittle{
     margin-left: 220px;
     color: rgb(173, 173, 173);
 }
+
+/* --- RESPONSIVE PARA MÓVILES --- */
 @media screen and (max-width: 768px) {
-    /* Sidebar oculto */
+    /* Ocultar sidebar */
     .sidebar {
       display: none;
     }
   
-    /* Centrado del logo */
+    /* Logo centrado */
     .logo {
-      width: 100%;
       text-align: center;
-      margin: 10px 0;
+      width: 100%;
+      margin: 20px 0;
     }
   
-    /* Contenedor principal centrado */
-    .container {
+    /* Contenedor principal ajustado */
+    .profile-container {
       width: 100%;
       margin: 0 auto;
-      padding: 0 10px;
-      box-sizing: border-box;
+      transform: none;
+      padding: 10px;
     }
   
-    /* Header de perfil */
-    .profile-header {
+    .section-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+      gap: 20px;
+    }
+  
+    .profile-left {
+      align-items: center;
+    }
+  
+    .profile-picture img {
+      width: 110px;
+      height: 110px;
+    }
+  
+    .section-1-3 {
+      position: static;
+      margin-top: 15px;
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .profile-header,
+    .profile-actions,
+    .profile-stats {
       flex-direction: column;
       align-items: center;
       text-align: center;
     }
   
-    .profile-picture {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 10px;
-    }
-  
-    .profile-info,
-    .profile-stats {
-      text-align: center;
-    }
-  
-    .btn-profile {
-      display: inline-block;
-      margin-top: 10px;
-    }
-  
-    /* Tabs y publicaciones */
     .tab_box {
-      flex-direction: row;
+      margin: 20px auto;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      margin-left: 0;
     }
   
     .tab_btn {
@@ -601,48 +611,71 @@ footer, .footer-tittle{
       text-align: center;
     }
   
-    .content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 15px;
+    .content.active {
+      margin-left: 0;
     }
   
-    .content a {
-      width: 45%;
+    #publicaciones,
+    #publicaciones2 {
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+      gap: 10px;
     }
   
-    .content img {
-      width: 100%;
+    #publicaciones img,
+    #publicaciones2 img {
+      width: 90%;
       height: auto;
-      object-fit: cover;
     }
   
-    /* Footer adaptado */
-    footer {
+    .tittle-1,
+    .tittle-2 {
       text-align: center;
-      padding: 20px 10px;
+      margin: 10px auto;
+    }
+  
+    .contenedor-especial {
+      margin: 0 auto;
+      text-align: center;
+    }
+  
+    .imagen-g1 {
+      width: 90%;
+      margin: 0 auto;
+    }
+  
+    .tittle-3 {
+      position: static;
+      transform: none;
+      background: rgba(0, 0, 0, 0.3);
+      color: white;
+      width: auto;
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+  
+    #etiquetadas {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    footer,
+    .enlaces-footer,
+    .enlaces-footer2,
+    .enlaces-footer3 {
+      margin-left: 0 !important;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
     }
   
     .footer-tittle h4,
     .footer-tittle1 {
       font-size: 12px;
-      text-align: center;
-    }
-  
-    .enlaces-footer,
-    .enlaces-footer2,
-    .enlaces-footer3 {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-  
-    .footer-bottom {
-      font-size: 10px;
-      margin-top: 10px;
+      margin: 5px 0;
     }
   }
   
