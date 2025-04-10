@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const contentSections = {
       publicaciones: document.querySelector('.grid-content'),
       guardados: document.querySelector('.saved-content'),
-      etiquetadas: document.querySelector('.tagged-content')
+      etiquetadas: document.querySelector('.tagged-content') // Asegúrate de que esta clase exista en el HTML
   };
 
   // Función para cambiar de sección
