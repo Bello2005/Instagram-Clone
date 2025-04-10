@@ -543,135 +543,106 @@ footer, .footer-tittle{
     margin-left: 220px;
     color: rgb(173, 173, 173);
 }
-@media (max-width: 768px) {
-        .sidebar {
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            height: auto;
-            border-right: none;
-            padding: 10px;
-        }
-    
-        .sidebar ul.nav-list,
-        .sidebar ul.nav-bottom {
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-        }
-    
-        .sidebar ul li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 90%;
-            justify-content: center;
-            border: none !important; /* Elimina las barras verticales */
-        }
-    
-        .sidebar ul li i,
-        .sidebar ul li img {
-            font-size: 20px;
-        }
-    
-        .sidebar ul li a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            color: #000;
-        }
-    
-    .profile-container {
-        width: 100%;
-        margin: 0 auto;
-        padding: 10px;
-        transform: none;
+@media screen and (max-width: 768px) {
+    /* Sidebar oculto */
+    .sidebar {
+      display: none;
     }
-
-    .section-1 {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+  
+    /* Centrado del logo */
+    .logo {
+      width: 100%;
+      text-align: center;
+      margin: 10px 0;
     }
-
-    .profile-picture img {
-        width: 120px;
-        height: 120px;
+  
+    /* Contenedor principal centrado */
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+      box-sizing: border-box;
     }
-
-    .profile-stats {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
+  
+    /* Header de perfil */
     .profile-header {
-        flex-direction: column;
-        gap: 10px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-
-    .profile-actions {
-        flex-direction: column;
-        gap: 6px;
+  
+    .profile-picture {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
     }
-
+  
+    .profile-info,
+    .profile-stats {
+      text-align: center;
+    }
+  
+    .btn-profile {
+      display: inline-block;
+      margin-top: 10px;
+    }
+  
+    /* Tabs y publicaciones */
     .tab_box {
-        flex-direction: column;
-        align-items: center;
-        margin-left: 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
-
-    .content_box {
-        margin-left: 0;
+  
+    .tab_btn {
+      font-size: 13px;
+      flex: 1 1 40%;
+      text-align: center;
     }
-
-    #publicaciones,
-    #publicaciones2 {
-        flex-direction: column;
-        align-items: center;
-        margin-left: 0;
+  
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
     }
-
-    #publicaciones img,
-    #publicaciones2 img {
-        width: 90%;
-        height: auto;
+  
+    .content a {
+      width: 45%;
     }
-
-    #guardadas .tittle-1,
-    #guardadas .tittle-2 {
-        margin: 10px auto;
-        text-align: center;
+  
+    .content img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
-
-    .contenedor-especial {
-        margin: 0 auto;
+  
+    /* Footer adaptado */
+    footer {
+      text-align: center;
+      padding: 20px 10px;
     }
-
-    .imagen-g1 {
-        width: 90%;
-        margin-right: 0;
+  
+    .footer-tittle h4,
+    .footer-tittle1 {
+      font-size: 12px;
+      text-align: center;
     }
-
-    .tittle-3 {
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80%;
-    }
-
-    #etiquetadas {
-        margin-left: 0;
-    }
-
+  
     .enlaces-footer,
     .enlaces-footer2,
     .enlaces-footer3 {
-        margin-left: 0;
-        flex-direction: column;
-        align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
     }
-}
+  
+    .footer-bottom {
+      font-size: 10px;
+      margin-top: 10px;
+    }
+  }
+  
